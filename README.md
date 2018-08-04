@@ -27,7 +27,7 @@ The image was analyzed three times, applying the median filter twice; no filters
 
 ### Application of the Watershed segmentation algorithm
 
-_The watershed is a classical algorithm used for *segmentation*, i.e. for separating different objects in an image._
+_The watershed is a classical algorithm used for **segmentation**, i.e. for separating different objects in an image._
 
 _Starting from user-defined markers, the watershed algorithm treats pixels values as a local topography (elevation). The algorithm floods basins from the markers, until basins attributed to different markers meet on watershed lines. In many cases, markers are chosen as local minima of the image, from which basins are flooded._
 
