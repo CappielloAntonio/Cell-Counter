@@ -17,6 +17,12 @@ L'immagine viene perlopiù divisa in tile quadrati, ma all'occorrenza vengono sa
   
 _The main idea of the median filter is to run through the signal entry by entry, replacing each entry with the median of neighboring entries. The pattern of neighbors is called the "window", which slides, entry by entry, over the entire signal._
 
+Parte cruciale all'interno del processo di ritrovamento e conteggio dei nuclei cellulari. L'applicazione del fitro mediano assicura che l'algoritmo di segmentazione watershed partizioni regioni significative dell'immagine (come il nucleo di una cellula), trascurando il rumore di fondo che potrebbe falzare i risultati finali.
+
+L'immagine è stata analizzata per tre volte, applicando per due volte il filtro mediano; la terza volta non è stato applicato alcun filtro.
+In quest'ultimo caso possiamo notare come anche in zone all'apparenza vuote l'algoritmo di segmentazione abbia rilevato un numero di nuclei altissimo (fino a quindicimila nuclei), mentre più in generale, andava a sovrastimare il numero di cellule nei tiles. Questi risultati erano falzati dal rumore di fondo dell'immagine che veniva riconosciuto come un oggetto meritevole di essere contato.
+Applicando il filtro mediano prima di matrice 5x5, poi di matrice 8x8, notiamo come il valore dei nuclei di cellule riconosciute cali drasticamente e in quelle zone dove erano stati ottenuti i valori maggiori  ci siano solo poche unità cellulari rendendo di fatto il conteggio più credibile.
+
 - Ricerca dei contorni degli oggetti
 
 - Ricerca delle fontane
